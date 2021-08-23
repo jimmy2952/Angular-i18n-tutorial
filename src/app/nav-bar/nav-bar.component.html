@@ -1,0 +1,18 @@
+<!-- src/app/nav-bar/nav-bar.component.html -->
+<mat-toolbar color="primary" class="nav-bar mat-elevation-z2">
+  <ng-container>
+      <mat-select
+        (selectionChange)="onSelectionChange($event.value)"
+        [value]="displayLanguage"
+        class="selectContainer"
+      >
+        <mat-select-trigger>
+          <div class="select-trigger-container">
+            <mat-icon>language</mat-icon>
+              <div>{{ i18nLang }}</div>
+          </div>
+        </mat-select-trigger>
+          <mat-option *ngFor="let language of languageList" [value]="language.code">{{ language.name }}</mat-option>
+      </mat-select>
+  </ng-container>
+</mat-toolbar>

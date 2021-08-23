@@ -1,9 +1,28 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "3ce57b32-07e9-4a84-87f9-cbe76b618d69"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "i18n-tutorial": {
+      "i18n": {
+        "locales": {
+          "en": {
+            "translation": "src/locale/messages.en.xlf",
+            "baseHref": "/en/"
+          },
+          "tw": {
+            "translation": "src/locale/messages.zh.Hant.xlf",
+            "baseHref": "/tw/"
+          },
+          "jp": {
+            "translation": "src/locale/messages.jp.xlf",
+            "baseHref": "/jp/"
+          }
+        }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -27,11 +46,21 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
           },
           "configurations": {
+            "en": {
+              "localize": ["en"]
+            },
+            "tw": {
+              "localize": ["tw"]
+            },
+            "jp": {
+              "localize": ["jp"]
+            },
             "production": {
               "budgets": [
                 {
@@ -70,6 +99,15 @@
             "production": {
               "browserTarget": "i18n-tutorial:build:production"
             },
+            "en": {
+              "browserTarget": "i18n-tutorial:build:en"
+            },
+            "tw": {
+              "browserTarget": "i18n-tutorial:build:tw"
+            },
+            "jp": {
+              "browserTarget": "i18n-tutorial:build:jp"
+            },
             "development": {
               "browserTarget": "i18n-tutorial:build:development"
             }
@@ -94,6 +132,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []

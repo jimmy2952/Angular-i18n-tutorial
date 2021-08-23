@@ -1,0 +1,13 @@
+/* src/app/i18n-form/i18n-form.component.css */
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  margin: 5rem auto;
+  width: 20%;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+}

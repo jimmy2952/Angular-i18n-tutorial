@@ -1,0 +1,65 @@
+<!-- src/app/i18n-form/i18n-form.component.html -->
+<form [formGroup]="i18nForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="outline">
+    <mat-label i18n="@@Email">Email</mat-label>
+    <input
+      matInput
+      type="email"
+      placeholder="Email"
+      formControlName="email"
+    />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label i18n>Password</mat-label>
+    <input
+      matInput
+      type="password"
+      placeholder="密碼"
+      formControlName="password"
+    />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+  <mat-select formControlName="address">
+    <mat-option
+      *ngFor="let city of cityList"
+      [value]="city.id"
+    >{{ city.name }}</mat-option>
+  </mat-select>
+</mat-form-field>
+  <div class="buttonContainer">
+    <button
+      mat-raised-button
+      type="reset"
+      (click)="onClear()"
+      i18n
+    >
+      Reset
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!i18nForm.valid"
+      i18n
+    >
+      Sign Up
+    </button>
+  </div>
+  <mat-form-field appearance="outline" style="margin-top: 2em;">
+    <mat-label i18n="@@Email">Email</mat-label>
+    <input
+      matInput
+      type="email"
+      placeholder="Email"
+    />
+  </mat-form-field>
+  <div>
+    <button
+      mat-raised-button
+      color="primary"
+      i18n="@@Email"
+    >
+      Email
+    </button>
+  </div>
+</form>
